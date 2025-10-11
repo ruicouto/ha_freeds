@@ -1,0 +1,10 @@
+{
+  "domain": "freeds_c588",
+  "name": "Freeds C588 MQTT",
+  "documentation": "https://github.com/your-repo/freeds_c588",
+  "version": "1.0",
+  "requirements": [],
+  "dependencies": ["mqtt"],
+  "codeowners": ["@your-github"],
+  "config_flow": true
+}
