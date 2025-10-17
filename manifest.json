@@ -1,10 +1,10 @@
 {
-  "domain": "freeds_c588",
-  "name": "Freeds C588 MQTT",
-  "documentation": "https://github.com/your-repo/freeds_c588",
+  "domain": "ha_freeds",
+  "name": "Freeds MQTT",
+  "documentation": "https://github.com/ruicouto/ha_freeds",
   "version": "1.0",
   "requirements": [],
   "dependencies": ["mqtt"],
-  "codeowners": ["@your-github"],
+  "codeowners": ["@ruicouto"],
   "config_flow": true
 }

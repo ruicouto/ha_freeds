@@ -1,12 +1,12 @@
-"""Config flow for Freeds C588 integration."""
+"""Config flow for Freeds integration."""
 from __future__ import annotations
 import voluptuous as vol
 from homeassistant import config_entries
 
-DOMAIN = "freeds_c588"
+DOMAIN = "ha_freeds"
 
-class FreedsC588ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
-    """Handle a config flow for Freeds C588."""
+class HAFreedsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+    """Handle a config flow for Freeds ."""
 
     VERSION = 1
 
@@ -17,7 +17,7 @@ class FreedsC588ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         if user_input is not None:
             # User submitted the form, create an entry
             return self.async_create_entry(
-                title="Freeds C588",
+                title="Freeds",
                 data=user_input
             )
 
@@ -26,7 +26,7 @@ class FreedsC588ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             step_id="user",
             data_schema=vol.Schema(
                 {
-                    vol.Optional("topic_prefix", default="freeds_C588"): str,
+                    vol.Optional("topic_prefix", default="ha_freeds"): str,
                 }
             ),
             errors=errors

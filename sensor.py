@@ -2,7 +2,7 @@
 
 
 
-"""Freeds C588 MQTT sensors."""
+"""Freeds MQTT sensors."""
 from __future__ import annotations
 import logging
 
@@ -12,9 +12,9 @@ from homeassistant.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 
-DOMAIN = "freeds_c588"
+DOMAIN = "ha_freeds"
 
-# All Freeds C588 subtopics to expose
+# All Freeds subtopics to expose
 TOPICS = [
     "pv1w", "pv1v", "pv2c", "pv2v", "pv2w", "pv1c",
     "todayW", "invTemp", "solarW", "batteryV", "calcWatts",
@@ -26,7 +26,7 @@ TOPICS = [
 ]
 
 
-class FreedsC588Sensor(Entity):
+class HAFreedsSensor(Entity):
     """Represents a single MQTT topic as a sensor."""
 
     def __init__(self, hass, topic: str):
@@ -64,10 +64,10 @@ class FreedsC588Sensor(Entity):
 
 
 async def async_setup_platform(hass, config: ConfigType, async_add_entities, discovery_info=None):
-    """Set up all Freeds C588 MQTT sensors."""
-    topic_prefix = config.get("topic_prefix", "freeds_C588")
+    """Set up all Freeds MQTT sensors."""
+    topic_prefix = config.get("topic_prefix", "hs_freeds")
 
-    sensors = [FreedsC588Sensor(hass, f"{topic_prefix}/{sub}") for sub in TOPICS]
+    sensors = [HAFreedsSensor(hass, f"{topic_prefix}/{sub}") for sub in TOPICS]
 
     async_add_entities(sensors)
     _LOGGER.info(f"✅ {DOMAIN}: {len(sensors)} sensors added, prefix={topic_prefix}")

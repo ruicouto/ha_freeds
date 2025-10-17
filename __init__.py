@@ -6,12 +6,12 @@ from homeassistant.core import HomeAssistant
 
 _LOGGER = logging.getLogger(__name__)
 
-DOMAIN = "freeds_c588"
+DOMAIN = "ha_freeds"
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
-    """Set up Freeds C588 from a config entry."""
-    _LOGGER.info("Setting up Freeds C588 integration")
+    """Set up Freeds from a config entry."""
+    _LOGGER.info("Setting up Freeds  integration")
 
     # Forward the entry setup to the sensor platform
     await hass.config_entries.async_forward_entry_setups(entry, ["sensor"])
@@ -21,5 +21,5 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry):
     """Unload a config entry."""
-    _LOGGER.info("Unloading Freeds C588 integration")
+    _LOGGER.info("Unloading Freeds  integration")
     return await hass.config_entries.async_unload_platforms(entry, ["sensor"])
