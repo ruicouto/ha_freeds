@@ -6,6 +6,5 @@
   "requirements": [],
   "dependencies": ["mqtt"],
   "codeowners": ["@your-github"],
-  "config_flow": true,
-  "frontend_js_module": "freeds-card.js"
+  "config_flow": true
 }
